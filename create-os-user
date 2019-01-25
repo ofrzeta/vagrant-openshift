@@ -1,0 +1,4 @@
+#!/bin/sh
+
+htpasswd -bc /etc/origin/master/htpasswd admin admin
+oc create clusterrolebinding registry-controller --clusterrole=cluster-admin --user=admin

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+myip=$(hostname -I | awk '{ print $2 }')
+
+sed -i "s/MASTER/$myip/g" /etc/ansible/hosts
+sed -i "s/DOMAIN/$myip.nip.io/g" /etc/ansible/hosts
+
+

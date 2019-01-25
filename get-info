@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "SSH configuration:"
+vagrant ssh-config
+
+myip=$(vagrant ssh -c "ip route get 1" | head -1 | awk '{ print $7 }')
+echo "OpenShift Master API is at https://$myip:8443"
+echo "Log in with admin/admin"
+
+
+

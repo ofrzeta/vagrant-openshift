@@ -1,0 +1,21 @@
+#!/bin/sh
+
+
+manageip=$(hostname -I | awk '{ print $1 }')
+managenet=$(echo $manageip | awk -F "." '{ print $1 "." $2 "." $3 }')
+
+sudo ip route del default via ${managenet}.1
+sudo sed -i "/$managenet/d" /etc/resolv.conf
+
+myip=$(hostname -I | awk '{ print $2 }')
+mydns=$(grep nameserver /etc/resolv.conf | awk '{ print $2 }')
+
+cat <<LINES |
+address=/mycloud.net/$myip
+server=$mydns
+LINES
+sudo tee /etc/dnsmasq.d/cloudconfig
+
+sudo sed -i '/nameserver/d' /etc/resolv.conf
+echo "nameserver 127.0.0.1" | sudo tee -a /etc/resolv.conf
+
