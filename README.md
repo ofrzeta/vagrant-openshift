@@ -19,7 +19,6 @@ Installs [OpenShift Origin](https://www.okd.io/) on a Vagrant managed VM with Ce
 * Get dependencies for Libvirt installation
 
         sudo yum install qemu libvirt libvirt-devel ruby-devel gcc qemu-kvm
-        vagrant plugin install vagrant-libvirt
 
 * Get Vagrant Libvirt plugin
 
