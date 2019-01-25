@@ -1,6 +1,6 @@
 # Vagrant project for OpenShift installation
 
-Installs OpenShift Origin on a Vagrant managed VM with CentOS 7. The main motivation of using this instead of minishift is that the latter doesn't support CRI-O as of now.
+Installs [OpenShift Origin](https://www.okd.io/) on a Vagrant managed VM with CentOS 7. The main motivation of using this instead of [minishift](https://github.com/minishift/minishift) is that the latter doesn't support [CRI-O](https://cri-o.io/) as of now.
 
 ## Features
 
