@@ -19,7 +19,7 @@ Installs OpenShift Origin on a Vagrant managed VM with CentOS 7. The main motiva
 * Get dependencies for Libvirt installation
 
         sudo yum install qemu libvirt libvirt-devel ruby-devel gcc qemu-kvm
-vagrant plugin install vagrant-libvirt
+        vagrant plugin install vagrant-libvirt
 
 * Get Vagrant Libvirt plugin
 
@@ -28,6 +28,8 @@ vagrant plugin install vagrant-libvirt
 * Get CentOS box for CentOS/7 and Libvirt provider (optional)
 
         vagrant box add centos/7 --provider libvirt
+
+* Clone Git repo and run `vagrant up`
 
 ## Todo
 
